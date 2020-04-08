@@ -1,7 +1,7 @@
 name: flutter_utils
-description: A new Flutter package project.
+description: My custom utils used across many projects
 version: 0.0.1
-author:
+author: Rex Magana
 homepage:
 
 environment:
@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore:
 
 dev_dependencies:
   flutter_test:

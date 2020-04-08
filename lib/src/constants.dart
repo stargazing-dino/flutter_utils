@@ -6,14 +6,14 @@ const kAnimationDuration = Duration(milliseconds: 250);
 /// 500 milliseconds
 const kAnimationDurationLg = Duration(milliseconds: 500);
 
-/// 8 seconds
-const kSnackBarDuration = Duration(seconds: 8);
-
 /// 4 seconds
-const kSnackBarDurationShort = Duration(seconds: 4);
+const kSnackBarDurationShort = Duration(seconds: 2);
+
+/// 8 seconds
+const kSnackBarDuration = Duration(seconds: 4);
 
 /// 12 seconds
-const kSnackBarDurationLong = Duration(seconds: 12);
+const kSnackBarDurationLong = Duration(seconds: 6);
 
 /// #FFCA2B
 const kWarningColor = Color(0xFFFFCA2B);
