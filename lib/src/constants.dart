@@ -6,13 +6,13 @@ const kAnimationDuration = Duration(milliseconds: 250);
 /// 500 milliseconds
 const kAnimationDurationLg = Duration(milliseconds: 500);
 
-/// 4 seconds
+/// 2 seconds
 const kSnackBarDurationShort = Duration(seconds: 2);
 
-/// 8 seconds
+/// 4 seconds
 const kSnackBarDuration = Duration(seconds: 4);
 
-/// 12 seconds
+/// 6 seconds
 const kSnackBarDurationLong = Duration(seconds: 6);
 
 /// #FFCA2B
@@ -62,6 +62,3 @@ const kBorderRadius = 20.0;
 
 /// 30.0
 const kBorderRadiusLg = 30.0;
-
-/// Whether the device is being taken screenshots of for asset stores
-final kIsTakingScreensShots = false;
