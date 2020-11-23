@@ -1,7 +1,5 @@
 /// Returns a string representation for common android status codes
 String getStatusCodeError(int statusCode) {
-  assert(statusCode != null);
-
   switch (statusCode) {
     // case 0:
     //   return 'The operation was successful.';

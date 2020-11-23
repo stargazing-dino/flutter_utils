@@ -4,8 +4,6 @@ import 'package:flutter/rendering.dart';
 ///
 /// E.g. a dark [backgroundColor] will return a white.
 Color getTextColor(Color backgroundColor) {
-  if (backgroundColor == null) return null;
-
   var d = 0;
 
   // Counting the perceptive luminance - human eye favors green background color...

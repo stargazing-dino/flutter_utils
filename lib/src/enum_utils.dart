@@ -12,6 +12,6 @@ String titleCaseEnum(dynamic enumerable) {
 T enumFromString<T>(Iterable<T> values, String value) {
   return values.firstWhere(
     (type) => type.toString().split('.').last == value,
-    orElse: () => null,
+    orElse: () => throw 'No enum found for value $value',
   );
 }

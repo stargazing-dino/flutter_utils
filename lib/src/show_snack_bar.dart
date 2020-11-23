@@ -1,139 +1,74 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
-import 'get_text_color.dart';
 
-enum SnackBarDuration { short, regular, long }
-
-Duration getDuration(durationType) {
-  switch (durationType) {
-    case SnackBarDuration.long:
-      return kSnackBarDurationLong;
-    case SnackBarDuration.regular:
-      return kSnackBarDuration;
-    case SnackBarDuration.short:
-      return kSnackBarDurationShort;
-    default:
-      throw ArgumentError(durationType);
-  }
-}
-
-void showErrorSnackBar({
-  GlobalKey<ScaffoldState> scaffoldKey,
-  BuildContext context,
-  @required Widget content,
-  Duration duration,
-  SnackBarDuration durationType = SnackBarDuration.long,
-  SnackBarAction action,
+ScaffoldFeatureController showErrorSnackBar({
+  required BuildContext context,
+  required Widget content,
+  required SnackBarAction action,
+  Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
-  assert(scaffoldKey != null || context != null);
-
-  final defaultDuration = getDuration(durationType);
-
   final snackBar = SnackBar(
-    content: DefaultTextStyle(
-      style: TextStyle(color: getTextColor(kErrorColor)),
-      child: content,
-    ),
+    content: content,
     backgroundColor: kErrorColor,
     behavior: behavior,
-    duration: duration ?? defaultDuration,
+    duration: duration,
     action: action,
   );
 
-  if (scaffoldKey != null) {
-    scaffoldKey.currentState.showSnackBar(snackBar);
-  } else {
-    Scaffold.of(context).showSnackBar(snackBar);
-  }
+  return ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
 
-void showWarningSnackBar({
-  GlobalKey<ScaffoldState> scaffoldKey,
-  BuildContext context,
-  @required Widget content,
-  Duration duration,
-  SnackBarDuration durationType = SnackBarDuration.regular,
-  SnackBarAction action,
+ScaffoldFeatureController showWarningSnackBar({
+  required BuildContext context,
+  required Widget content,
+  required SnackBarAction action,
+  Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
-  assert(scaffoldKey != null || context != null);
-
-  final defaultDuration = getDuration(durationType);
-
   final snackBar = SnackBar(
-    content: DefaultTextStyle(
-      style: TextStyle(color: getTextColor(kWarningColor)),
-      child: content,
-    ),
+    content: content,
     backgroundColor: kWarningColor,
     behavior: behavior,
-    duration: duration ?? defaultDuration,
+    duration: duration,
     action: action,
   );
 
-  if (scaffoldKey != null) {
-    scaffoldKey.currentState.showSnackBar(snackBar);
-  } else {
-    Scaffold.of(context).showSnackBar(snackBar);
-  }
+  return ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
 
-void showInfoSnackBar({
-  GlobalKey<ScaffoldState> scaffoldKey,
-  BuildContext context,
-  @required Widget content,
-  Duration duration,
-  SnackBarDuration durationType = SnackBarDuration.short,
-  SnackBarAction action,
+ScaffoldFeatureController showInfoSnackBar({
+  required BuildContext context,
+  required Widget content,
+  required SnackBarAction action,
+  Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
-  assert(scaffoldKey != null || context != null);
-
-  final defaultDuration = getDuration(durationType);
-
   final snackBar = SnackBar(
     content: content,
     behavior: behavior,
-    duration: duration ?? defaultDuration,
+    duration: duration,
     action: action,
   );
 
-  if (scaffoldKey != null) {
-    scaffoldKey.currentState.showSnackBar(snackBar);
-  } else {
-    Scaffold.of(context).showSnackBar(snackBar);
-  }
+  return ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
 
-void showSuccessSnackBar({
-  GlobalKey<ScaffoldState> scaffoldKey,
-  BuildContext context,
-  @required Widget content,
-  Duration duration,
-  SnackBarDuration durationType = SnackBarDuration.short,
-  SnackBarAction action,
+ScaffoldFeatureController showSuccessSnackBar({
+  required BuildContext context,
+  required Widget content,
+  required SnackBarAction action,
+  Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
-  assert(scaffoldKey != null || context != null);
-
-  final defaultDuration = getDuration(durationType);
-
   final snackBar = SnackBar(
-    content: DefaultTextStyle(
-      style: TextStyle(color: getTextColor(kSuccessColor)),
-      child: content,
-    ),
+    content: content,
     behavior: behavior,
-    duration: duration ?? defaultDuration,
+    duration: duration,
     action: action,
     backgroundColor: kSuccessColor,
   );
 
-  if (scaffoldKey != null) {
-    scaffoldKey.currentState.showSnackBar(snackBar);
-  } else {
-    Scaffold.of(context).showSnackBar(snackBar);
-  }
+  return ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
