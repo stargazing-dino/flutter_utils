@@ -10,6 +10,8 @@ ScaffoldFeatureController showErrorSnackBar({
   Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
+  final textColor = getTextColor(kErrorColor);
+
   action ??= SnackBarAction(
     label: 'OK',
     onPressed: Navigator.of(context)!.pop,
@@ -17,7 +19,7 @@ ScaffoldFeatureController showErrorSnackBar({
 
   final snackBar = SnackBar(
     content: DefaultTextStyle(
-      style: TextStyle(color: getTextColor(kErrorColor)),
+      style: TextStyle(color: textColor),
       child: content,
     ),
     backgroundColor: kErrorColor,
@@ -36,14 +38,17 @@ ScaffoldFeatureController showWarningSnackBar({
   Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
+  final textColor = getTextColor(kWarningColor);
+
   action ??= SnackBarAction(
     label: 'OK',
+    textColor: textColor,
     onPressed: Navigator.of(context)!.pop,
   );
 
   final snackBar = SnackBar(
     content: DefaultTextStyle(
-      style: TextStyle(color: getTextColor(kWarningColor)),
+      style: TextStyle(color: textColor),
       child: content,
     ),
     backgroundColor: kWarningColor,
@@ -84,14 +89,17 @@ ScaffoldFeatureController showSuccessSnackBar({
   Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
+  final textColor = getTextColor(kSuccessColor);
+
   action ??= SnackBarAction(
     label: 'OK',
+    textColor: textColor,
     onPressed: Navigator.of(context)!.pop,
   );
 
   final snackBar = SnackBar(
     content: DefaultTextStyle(
-      style: TextStyle(color: getTextColor(kSuccessColor)),
+      style: TextStyle(color: textColor),
       child: content,
     ),
     behavior: behavior,
