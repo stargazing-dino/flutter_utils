@@ -5,10 +5,15 @@ import 'constants.dart';
 ScaffoldFeatureController showErrorSnackBar({
   required BuildContext context,
   required Widget content,
-  required SnackBarAction action,
+  SnackBarAction? action,
   Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
+  action ??= SnackBarAction(
+    label: 'OK',
+    onPressed: Navigator.of(context)!.pop,
+  );
+
   final snackBar = SnackBar(
     content: content,
     backgroundColor: kErrorColor,
@@ -23,10 +28,15 @@ ScaffoldFeatureController showErrorSnackBar({
 ScaffoldFeatureController showWarningSnackBar({
   required BuildContext context,
   required Widget content,
-  required SnackBarAction action,
+  SnackBarAction? action,
   Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
+  action ??= SnackBarAction(
+    label: 'OK',
+    onPressed: Navigator.of(context)!.pop,
+  );
+
   final snackBar = SnackBar(
     content: content,
     backgroundColor: kWarningColor,
@@ -41,10 +51,15 @@ ScaffoldFeatureController showWarningSnackBar({
 ScaffoldFeatureController showInfoSnackBar({
   required BuildContext context,
   required Widget content,
-  required SnackBarAction action,
+  SnackBarAction? action,
   Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
+  action ??= SnackBarAction(
+    label: 'OK',
+    onPressed: Navigator.of(context)!.pop,
+  );
+
   final snackBar = SnackBar(
     content: content,
     behavior: behavior,
@@ -58,10 +73,15 @@ ScaffoldFeatureController showInfoSnackBar({
 ScaffoldFeatureController showSuccessSnackBar({
   required BuildContext context,
   required Widget content,
-  required SnackBarAction action,
+  SnackBarAction? action,
   Duration duration = kSnackBarDuration,
   SnackBarBehavior behavior = SnackBarBehavior.floating,
 }) {
+  action ??= SnackBarAction(
+    label: 'OK',
+    onPressed: Navigator.of(context)!.pop,
+  );
+
   final snackBar = SnackBar(
     content: content,
     behavior: behavior,
