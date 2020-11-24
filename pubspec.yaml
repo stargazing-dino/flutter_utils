@@ -1,11 +1,11 @@
 name: flutter_utils
 description: My custom utils used across many projects
-version: 0.1.1
+version: 0.1.2
 author: Rex Magana
 homepage:
 
 environment:
-  sdk: ">=2.11.0-213.0.dev <2.12.0"
+  sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
   flutter:
@@ -14,5 +14,3 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-flutter:
