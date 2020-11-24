@@ -14,7 +14,8 @@ ScaffoldFeatureController showErrorSnackBar({
 
   action ??= SnackBarAction(
     label: 'OK',
-    onPressed: Navigator.of(context)!.pop,
+    textColor: textColor,
+    onPressed: ScaffoldMessenger.of(context).hideCurrentSnackBar,
   );
 
   final snackBar = SnackBar(
@@ -43,7 +44,7 @@ ScaffoldFeatureController showWarningSnackBar({
   action ??= SnackBarAction(
     label: 'OK',
     textColor: textColor,
-    onPressed: Navigator.of(context)!.pop,
+    onPressed: ScaffoldMessenger.of(context).hideCurrentSnackBar,
   );
 
   final snackBar = SnackBar(
@@ -69,7 +70,7 @@ ScaffoldFeatureController showInfoSnackBar({
 }) {
   action ??= SnackBarAction(
     label: 'OK',
-    onPressed: Navigator.of(context)!.pop,
+    onPressed: ScaffoldMessenger.of(context).hideCurrentSnackBar,
   );
 
   final snackBar = SnackBar(
@@ -94,7 +95,7 @@ ScaffoldFeatureController showSuccessSnackBar({
   action ??= SnackBarAction(
     label: 'OK',
     textColor: textColor,
-    onPressed: Navigator.of(context)!.pop,
+    onPressed: ScaffoldMessenger.of(context).hideCurrentSnackBar,
   );
 
   final snackBar = SnackBar(
