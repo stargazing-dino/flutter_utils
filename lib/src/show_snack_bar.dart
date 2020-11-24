@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_utils/flutter_utils.dart';
 
 import 'constants.dart';
 
@@ -15,7 +16,10 @@ ScaffoldFeatureController showErrorSnackBar({
   );
 
   final snackBar = SnackBar(
-    content: content,
+    content: DefaultTextStyle(
+      style: TextStyle(color: getTextColor(kErrorColor)),
+      child: content,
+    ),
     backgroundColor: kErrorColor,
     behavior: behavior,
     duration: duration,
@@ -38,7 +42,10 @@ ScaffoldFeatureController showWarningSnackBar({
   );
 
   final snackBar = SnackBar(
-    content: content,
+    content: DefaultTextStyle(
+      style: TextStyle(color: getTextColor(kWarningColor)),
+      child: content,
+    ),
     backgroundColor: kWarningColor,
     behavior: behavior,
     duration: duration,
@@ -83,7 +90,10 @@ ScaffoldFeatureController showSuccessSnackBar({
   );
 
   final snackBar = SnackBar(
-    content: content,
+    content: DefaultTextStyle(
+      style: TextStyle(color: getTextColor(kSuccessColor)),
+      child: content,
+    ),
     behavior: behavior,
     duration: duration,
     action: action,
